@@ -1,0 +1,22 @@
+platform :ios, '10.0'
+
+target 'CarSample' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for CarSample
+  #pod 'Alamofire', '~> 5.0.0-beta.5'
+  pod 'Kingfisher', '~> 5.4.0'
+  pod 'SwiftLint', '~> 0.32.0'
+
+  target 'CarSampleTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'CarSampleUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

@@ -1,0 +1,61 @@
+ [
+     {
+     "make": "Renault",
+    "model": "Twingo Ancien Model",
+    "year": 2006,
+    "picture": "https://www.travelcar.com/api/media/20170824/dJs3itYPcL1PBPLtTXElInJiK0cGN0SPCDsyyJBOYDjlnLMyzXgrIxRm3c10D30MxvUyf7akpF5Nj60jls5OUINCgbNmWEnxOXWWzfds7JtNDaQOjvf5ntKw5Jt15h2K/twingo-b.png",
+    "equipments": [
+        "GPS",
+        "Siege enfant",
+        "Assistance 24h/24"
+    ]
+ },
+  {
+     "make": "Citroen",
+    "model": "C1 I",
+    "year": 2003,
+    "picture": "https://www.travelcar.com/api/media/20170911/MDkWGH4LlpEY0U1SsYGPMYa_tKKMp_GJwfHZJFtKBOYk2h9Lo8OmI1VJCZHGe_TY0oeHsbcWAdrbkD8rX43sOg6-E6EarDkn5-3jTF4EFVH81kWnqW11WIS_JtPgSAzg/citroen-c-1-verte-trip-n-drive.png",
+    "equipments": [
+        "GPS",
+        "Climatisation"
+    ]
+ },
+  {
+     "make": "Renault",
+    "model": "Clio II",
+    "year": 2017,
+    "picture": "https://www.travelcar.com/api/media/20161108/vOpojibhaVoH717MoKak8IcbIdZNFjrXVA_mvw1Kr8NUE4OKIC8alCCLfLC4GxgUQVdRUu0shyOrVAfe-tPIiuQQuE9ZlGd6Jc9OwnRhVTBLrQOGFs_muLakYyAhDm3U/renault-clio-iii.jpg",
+    "equipments": [
+        "GPS",
+        "Climatisation",
+        "ABS",
+        "Airbags"
+    ]
+ },
+   {
+     "make": "Kia",
+    "model": "Cee'd",
+    "year": 2008,
+    "picture": "https://www.travelcar.com/api/media/20171116/Mp3m8y_F2JEQ6HD_sbMLbSXHtCkntOj5MmIUvlrvSW-Xs-Tayf73hQrNlO7CnrGAbpdwU0DvH5vPdDO3ZE0nb40nvvWrhoBJc3IsScSkWwUArxbIRaJ_MZX-wHM9lZ9r/kia-ceed-png.jpg",
+    "equipments": [
+        "GPS",
+        "Airbags"
+    ]
+ },
+  {
+     "make": "Volkswagen",
+    "model": "Golf V",
+    "year": 2012,
+    "picture": "https://www.travelcar.com/api/media/1325-image1-orig-5336d576f11aa-07o-9337-214414.jpg",
+    "equipments": null
+ },
+   {
+     "make": "Honda",
+    "model": "CV R",
+    "year": 2011,
+    "picture": "https://www.travelcar.com/api/media/20170511/cc77fe5o0go9skw-FjwTNoToJCPAQlfq3-HppXLplCEDH35K-WFNOhTFLiVW6AwS6z5I5-e0T7hJlLJhASfNy0RNcC2-TVA5GSDff7jL292LJ-qKwsgO5BOgCwVireoq/honda-cr-v.jpg",
+    "equipments": [
+        "Climatisation"
+    ]
+ }
+]
