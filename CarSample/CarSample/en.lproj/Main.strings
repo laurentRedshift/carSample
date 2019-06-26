@@ -1,0 +1,54 @@
+
+/* Class = "UILabel"; text = "Age"; ObjectID = "1o2-lB-7U0"; */
+"1o2-lB-7U0.text" = "Age";
+
+/* Class = "UILabel"; text = "Equipements : "; ObjectID = "74X-ge-8nT"; */
+"74X-ge-8nT.text" = "Equipements : ";
+
+/* Class = "UILabel"; text = "Age"; ObjectID = "7Ab-uG-XKD"; */
+"7Ab-uG-XKD.text" = "Age";
+
+/* Class = "UILabel"; text = "Aucune voiture à afficher"; ObjectID = "9Xb-y0-YCo"; */
+"9Xb-y0-YCo.text" = "No car to display";
+
+/* Class = "UILabel"; text = "Prénom Nom"; ObjectID = "C4R-ZF-rAY"; */
+"C4R-ZF-rAY.text" = "Nickname Name";
+
+/* Class = "UITabBarItem"; title = "Search"; ObjectID = "EXW-WE-HaD"; */
+"EXW-WE-HaD.title" = "Search";
+
+/* Class = "UIBarButtonItem"; title = "Edit"; ObjectID = "Goe-8C-VxC"; */
+"Goe-8C-VxC.title" = "Edit";
+
+/* Class = "UILabel"; text = "model"; ObjectID = "Nm2-jq-yrm"; */
+"Nm2-jq-yrm.text" = "Model";
+
+/* Class = "UITabBarItem"; title = "Account"; ObjectID = "QLX-Qn-QGw"; */
+"QLX-Qn-QGw.title" = "Account";
+
+/* Class = "UILabel"; text = "Equipements"; ObjectID = "QXO-9k-XYO"; */
+"QXO-9k-XYO.text" = "Equipements";
+
+/* Class = "UILabel"; text = "Nom"; ObjectID = "W8Y-9a-KuD"; */
+"W8Y-9a-KuD.text" = "Name";
+
+/* Class = "UILabel"; text = "make"; ObjectID = "XcD-HX-WO5"; */
+"XcD-HX-WO5.text" = "Make";
+
+/* Class = "UILabel"; text = "Adresse"; ObjectID = "YwL-3r-9Sq"; */
+"YwL-3r-9Sq.text" = "Address";
+
+/* Class = "UILabel"; text = "Prénom"; ObjectID = "Yyt-oB-uyB"; */
+"Yyt-oB-uyB.text" = "Nickname";
+
+/* Class = "UILabel"; text = "year"; ObjectID = "aAh-5b-lNR"; */
+"aAh-5b-lNR.text" = "Year";
+
+/* Class = "UILabel"; text = "Adresse"; ObjectID = "gKT-Wg-hnI"; */
+"gKT-Wg-hnI.text" = "Address";
+
+/* Class = "UILabel"; text = "model"; ObjectID = "kDG-19-7VK"; */
+"kDG-19-7VK.text" = "Model";
+
+/* Class = "UILabel"; text = "Veuillez editer votre compte."; ObjectID = "xjj-0b-ABJ"; */
+"xjj-0b-ABJ.text" = "Please edit your account.";

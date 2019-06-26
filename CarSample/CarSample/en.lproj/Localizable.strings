@@ -1,0 +1,8 @@
+"tab.search" = "Search";
+"tab.account" = "Account";
+"account.edit" = "Edit";
+"account.age" = "%@ years old";
+"account.item.save" = "Save";
+"search.notification.title" = "Message";
+"search.notification.text" = "Car list is updated";
+"search.bar.placeholder" = "Search cars models or marks";

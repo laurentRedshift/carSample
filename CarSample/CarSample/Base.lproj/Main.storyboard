@@ -286,9 +286,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUb-Yp-2H0">
-                                <rect key="frame" x="237" y="207.5" width="30" height="30"/>
-                                <state key="normal" image="camera"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUb-Yp-2H0">
+                                <rect key="frame" x="289" y="207.5" width="30" height="30"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="camera">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="tapToCamera:" destination="zXy-I6-vPU" eventType="touchUpInside" id="24i-73-m7e"/>
                                 </connections>
@@ -307,10 +310,10 @@
                             <constraint firstItem="7Ab-uG-XKD" firstAttribute="centerX" secondItem="FsG-KP-gZa" secondAttribute="centerX" id="JK0-j5-JNA"/>
                             <constraint firstItem="xjj-0b-ABJ" firstAttribute="centerY" secondItem="FsG-KP-gZa" secondAttribute="centerY" id="StY-JT-Fs5"/>
                             <constraint firstItem="C4R-ZF-rAY" firstAttribute="top" secondItem="NaI-7D-yHH" secondAttribute="top" constant="30" id="Yhm-wF-PEZ"/>
+                            <constraint firstItem="yUb-Yp-2H0" firstAttribute="leading" secondItem="DYc-xu-h6c" secondAttribute="trailing" constant="22" id="cMs-1Y-ZJI"/>
+                            <constraint firstItem="yUb-Yp-2H0" firstAttribute="top" secondItem="DYc-xu-h6c" secondAttribute="top" id="cXL-vB-xp1"/>
                             <constraint firstItem="DYc-xu-h6c" firstAttribute="centerX" secondItem="FsG-KP-gZa" secondAttribute="centerX" id="h9u-BD-yQ2"/>
                             <constraint firstItem="DYc-xu-h6c" firstAttribute="top" secondItem="7Ab-uG-XKD" secondAttribute="bottom" constant="20" id="i3W-qt-Bpp"/>
-                            <constraint firstItem="yUb-Yp-2H0" firstAttribute="trailing" secondItem="DYc-xu-h6c" secondAttribute="trailing" id="iMj-Wk-55B"/>
-                            <constraint firstItem="yUb-Yp-2H0" firstAttribute="top" secondItem="DYc-xu-h6c" secondAttribute="top" id="lAs-ZE-Dt6"/>
                             <constraint firstItem="xjj-0b-ABJ" firstAttribute="centerX" secondItem="FsG-KP-gZa" secondAttribute="centerX" id="nBh-hh-fXG"/>
                             <constraint firstItem="YwL-3r-9Sq" firstAttribute="top" secondItem="DYc-xu-h6c" secondAttribute="bottom" constant="20" id="vhF-RP-wIN"/>
                             <constraint firstItem="C4R-ZF-rAY" firstAttribute="centerX" secondItem="FsG-KP-gZa" secondAttribute="centerX" id="ywj-eW-jOY"/>
@@ -367,9 +370,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X9E-1e-nV1">
-                                <rect key="frame" x="194" y="113.5" width="200" height="30"/>
+                                <rect key="frame" x="234" y="113.5" width="160" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="ljj-WF-dQF"/>
+                                    <constraint firstAttribute="width" constant="160" id="ljj-WF-dQF"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -379,13 +382,13 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cv8-YM-K2d">
-                                <rect key="frame" x="194" y="215.5" width="200" height="30"/>
+                                <rect key="frame" x="234" y="215.5" width="160" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NPu-xd-taD">
-                                <rect key="frame" x="194" y="164.5" width="200" height="30"/>
+                                <rect key="frame" x="234" y="164.5" width="160" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -400,7 +403,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gMj-vT-Q0H">
-                                <rect key="frame" x="194" y="266.5" width="200" height="30"/>
+                                <rect key="frame" x="234" y="266.5" width="160" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>

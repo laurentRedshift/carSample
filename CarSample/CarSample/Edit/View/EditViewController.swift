@@ -32,8 +32,8 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func setupUI() {
-        navigationItem.title = "Edit"
-       let saveButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(tapToSave))
+        navigationItem.title = NSLocalizedString("account.edit", comment: "")
+       let saveButtonItem = UIBarButtonItem(title: NSLocalizedString("account.item.save", comment: ""), style: .plain, target: self, action: #selector(tapToSave))
         navigationItem.rightBarButtonItems = [saveButtonItem]
         firstNameTextField.becomeFirstResponder()
         configureDatePicker()

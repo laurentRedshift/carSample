@@ -15,6 +15,7 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var addPictureButton: UIButton!
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var noAccountLabel: UILabel!
+    
     private lazy var imagePickerController: UIImagePickerController = {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -63,12 +64,17 @@ class AccountViewController: UIViewController {
     }
     
     private func setupUI() {
-        navigationItem.title = "Account"
+        navigationItem.title = NSLocalizedString("tab.account", comment: "")
         displayedAccountInfos = false
+        pictureImageView.clipsToBounds = true
+        pictureImageView.layer.cornerRadius = 20
+
         if #available(iOS 11, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
         }
     }
+    
+    // MARK: - Handle actions
     
     @IBAction private func tapToEdit(_ sender: Any) {
     }
@@ -82,7 +88,7 @@ extension AccountViewController: AccountInterface {
     func display(accountViewModel: AccountViewModel) {
         nameLabel.text = accountViewModel.name
         adressLabel.text = accountViewModel.adress
-        ageLabel.text = "\(accountViewModel.age) ans"
+        ageLabel.text = String(format: NSLocalizedString("account.age", comment: ""), accountViewModel.age)
         displayedAccountInfos = true
     }
     

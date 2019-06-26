@@ -6,8 +6,8 @@ public enum Notification {
 
 struct RefreshNotification: UserNotification {
     let id = Notification.refreshNotificationId
-    let title = "Mise à jour"
-    let body = "Les Voitures ont été mises à jour"
+    let title = NSLocalizedString("search.notification.title", comment: "")
+    let body = NSLocalizedString("search.notification.text", comment: "")
 }
 
 enum CarSearcher {
@@ -50,11 +50,12 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     private func setupUI() {
         noCarsLabel.isHidden = true
         tableView.alpha = 0
-        navigationItem.title = "Search"
+        navigationItem.title = NSLocalizedString("tab.search", comment: "")
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchBar.placeholder = "Search cars models or marks"
+        searchController.searchBar.placeholder = NSLocalizedString("search.bar.placeholder", comment: "")
+        
         if #available(iOS 11, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
             navigationItem.searchController = searchController

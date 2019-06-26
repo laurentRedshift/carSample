@@ -36,6 +36,7 @@
 		1B95121A22C2844200CA9D26 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B95121922C2844200CA9D26 /* CoreDataManager.swift */; };
 		1B95121C22C2AAED00CA9D26 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B95121B22C2AAED00CA9D26 /* NotificationHelper.swift */; };
 		1B95121E22C2ABDE00CA9D26 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B95121D22C2ABDE00CA9D26 /* NotificationManager.swift */; };
+		1B95122722C3BFA900CA9D26 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B95122922C3BFA900CA9D26 /* Localizable.strings */; };
 		36A19F36A674FA447EFE3326 /* Pods_CarSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E035708FB5FE527EB80046CB /* Pods_CarSampleTests.framework */; };
 		75881304A49073F6C2B7F7F3 /* Pods_CarSampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD83BA3B3E44C6F1556E1200 /* Pods_CarSampleUITests.framework */; };
 		7B089820A8C16446EA4B9DEA /* Pods_CarSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7941212DD0CEF00588D7F46 /* Pods_CarSample.framework */; };
@@ -94,6 +95,8 @@
 		1B95121922C2844200CA9D26 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		1B95121B22C2AAED00CA9D26 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		1B95121D22C2ABDE00CA9D26 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		1B95122822C3BFA900CA9D26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1B95122B22C3C05C00CA9D26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		31BC7947E67615197908F724 /* Pods-CarSampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarSampleTests.debug.xcconfig"; path = "Target Support Files/Pods-CarSampleTests/Pods-CarSampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E8BB7C1D3332B48C4C045B6 /* Pods-CarSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarSample.debug.xcconfig"; path = "Target Support Files/Pods-CarSample/Pods-CarSample.debug.xcconfig"; sourceTree = "<group>"; };
 		558A788BEF0F130A33B80A99 /* Pods-CarSampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarSampleUITests.release.xcconfig"; path = "Target Support Files/Pods-CarSampleUITests/Pods-CarSampleUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +170,7 @@
 				1B9511E522C11D9600CA9D26 /* Home */,
 				1B9511B022C0FA3100CA9D26 /* AppDelegate.swift */,
 				1B9511B422C0FA3100CA9D26 /* Main.storyboard */,
+				1B95122922C3BFA900CA9D26 /* Localizable.strings */,
 				1B9511BA22C0FA3200CA9D26 /* Assets.xcassets */,
 				1B9511BC22C0FA3200CA9D26 /* LaunchScreen.storyboard */,
 				1B9511BF22C0FA3200CA9D26 /* Info.plist */,
@@ -475,6 +479,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B95122722C3BFA900CA9D26 /* Localizable.strings in Resources */,
 				1B9511EA22C11EA200CA9D26 /* tc-test-ios.json in Resources */,
 				1B9511BE22C0FA3200CA9D26 /* LaunchScreen.storyboard in Resources */,
 				1B9511BB22C0FA3200CA9D26 /* Assets.xcassets in Resources */,
@@ -674,6 +679,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1B9511B522C0FA3100CA9D26 /* Base */,
+				1B95122B22C3C05C00CA9D26 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -684,6 +690,14 @@
 				1B9511BD22C0FA3200CA9D26 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1B95122922C3BFA900CA9D26 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B95122822C3BFA900CA9D26 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
