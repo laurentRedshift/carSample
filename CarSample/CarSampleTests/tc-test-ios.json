@@ -1,0 +1,13 @@
+ [
+     {
+     "make": "Renault",
+    "model": "Twingo Ancien Model",
+    "year": 2006,
+    "picture": "https://www.travelcar.com/api/media/20170824/dJs3itYPcL1PBPLtTXElInJiK0cGN0SPCDsyyJBOYDjlnLMyzXgrIxRm3c10D30MxvUyf7akpF5Nj60jls5OUINCgbNmWEnxOXWWzfds7JtNDaQOjvf5ntKw5Jt15h2K/twingo-b.png",
+    "equipments": [
+        "GPS",
+        "Siege enfant",
+        "Assistance 24h/24"
+    ]
+ }
+]

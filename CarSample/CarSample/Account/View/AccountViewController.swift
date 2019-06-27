@@ -25,7 +25,7 @@ class AccountViewController: UIViewController {
     }()
     
     lazy var accountPresenter: AccountPresenter = {
-        let presenter = AccountPresenterImpl(repository: AccountRepositoryImpl(), accountImageRepository: AccountImageRepositoryImpl(directory: .documentDirectory))
+        let presenter = AccountPresenterImpl(repository: AccountRepositoryImpl(cache: UserDefaults.standard), accountImageRepository: AccountImageRepositoryImpl(directory: .documentDirectory))
         presenter.interface = self
         return presenter
     }()
@@ -56,8 +56,8 @@ class AccountViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        if let viewController = segue.destination as? EditViewController {
-            let editAccountPresenter = EditAccountPresenterImpl(repository: AccountRepositoryImpl())
+        if let viewController = segue.destination as? EditAccountViewController {
+            let editAccountPresenter = EditAccountPresenterImpl(repository: AccountRepositoryImpl(cache: UserDefaults.standard))
             editAccountPresenter.interface = viewController
             viewController.presenter = editAccountPresenter
         }

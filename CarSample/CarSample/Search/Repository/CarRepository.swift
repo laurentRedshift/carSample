@@ -32,8 +32,14 @@ class CarRepositoryImpl: CarRepository {
     }
     
     private let lastCarsStoredDateKey = "lastCarsDate"
-    private let localCache = UserDefaults.standard
+    private var localCache: UserDefaults
     private var carsEntities: [CarEntity]?
+    private let networkApi: NetworkApi
+    
+    init(cache: UserDefaults, networkApi: NetworkApi) {
+        self.localCache = cache
+        self.networkApi = networkApi
+    }
     
     private var lastCarsStoredDate: Date? {
         get {
@@ -52,7 +58,7 @@ class CarRepositoryImpl: CarRepository {
     
     private func getLocalData() throws -> Data {
         do {
-            guard let data = try JsonHelper.json(filename: "tc-test-ios", bundle: Bundle.main) else {
+            guard let data = try JsonHelper.json(filename: "cars", bundle: Bundle.main) else {
                 throw CarsRepositoryError.badAccessToLocalData
             }
             return data
@@ -76,15 +82,7 @@ class CarRepositoryImpl: CarRepository {
             completion(.failure(CarsRepositoryError.badCarsUrl))
             return
         }
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            if let error = error {
-                print("fetchData error: \(error.localizedDescription)")
-            }
-            guard let data = data else { return }
-            DispatchQueue.main.async {
-                completion(.success(data))
-            }
-        }.resume()
+        networkApi.requestResult(resource: Resource(url: url), completion: completion)
     }
     
     private func getSavedData() throws -> Cars {
@@ -139,21 +137,32 @@ class CarRepositoryImpl: CarRepository {
             print("needToRefreshCars, so fetchData")
             fetchData(completion: { [weak self] result in
                 guard let self = self else { return }
-                if case .success(let data) = result, let cars = try? self.parseData(data: data) {
-                    cars.forEach {
-                        do {
-                            self.deleteCarsRecords()
-                            try self.createCarRecord(car: $0)
-                            let context = CoreDataManager.shared.persistentContainer.viewContext
-                            CoreDataManager.shared.saveContext(inManagedObjectContext: context)
-                            self.lastCarsStoredDate = Date()
-                        } catch {
-                            print("can not store car")
-                        }
+                switch result {
+                case .success(let data):
+                    if let cars = try? self.parseData(data: data) {
+                        self.save(cars: cars)
+                        refreshed?(.success(cars))
+                    } else {
+                        refreshed?(.failure(CarsRepositoryError.badDistantData))
                     }
-                    refreshed?(.success(cars))
+                case .failure(let error):
+                    refreshed?(.failure(error))
                 }
             })
+        }
+    }
+    
+    private func save(cars: Cars) {
+        cars.forEach {
+            do {
+                self.deleteCarsRecords()
+                try self.createCarRecord(car: $0)
+                let context = CoreDataManager.shared.persistentContainer.viewContext
+                CoreDataManager.shared.saveContext(inManagedObjectContext: context)
+                self.lastCarsStoredDate = Date()
+            } catch {
+                print("can not store car")
+            }
         }
     }
 }

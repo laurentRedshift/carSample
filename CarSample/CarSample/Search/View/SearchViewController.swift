@@ -10,18 +10,6 @@ struct RefreshNotification: UserNotification {
     let body = NSLocalizedString("search.notification.text", comment: "")
 }
 
-enum CarSearcher {
-    static let minCharactersAcceptable = 3
-    static func search(searchText: String, attribute: String) -> Bool {
-        if searchText.count >= minCharactersAcceptable {
-            return attribute.contains(searchText.prefix(minCharactersAcceptable))
-            
-        } else {
-            return attribute.contains(searchText)
-        }
-    }
-}
-
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var noCarsLabel: UILabel!
@@ -29,7 +17,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     lazy var searchPresenter: SearchPresenter = {
-        let presenter = SearchPresenterImpl(repository: CarRepositoryImpl())
+        let presenter = SearchPresenterImpl(repository: CarRepositoryImpl(cache: UserDefaults.standard, networkApi: NetworkApiImpl()))
         presenter.interface = self
         return presenter
     }()
@@ -50,6 +38,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     private func setupUI() {
         noCarsLabel.isHidden = true
         tableView.alpha = 0
+        tableView.estimatedRowHeight = 116
+        tableView.rowHeight = UITableView.automaticDimension
         navigationItem.title = NSLocalizedString("tab.search", comment: "")
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -70,7 +60,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if let viewController = segue.destination as? CarDetailViewController,
             let selectedIndexPath = tableView.indexPathForSelectedRow,
             let selectedCarViewModel = filteredCarsListModels?[safe: selectedIndexPath.row] {
-            let carDetailPresenter = CarDetailPresenterImpl(model: selectedCarViewModel.model, repository: CarRepositoryImpl())
+            let carDetailPresenter = CarDetailPresenterImpl(model: selectedCarViewModel.model, repository: CarRepositoryImpl(cache: UserDefaults.standard, networkApi: NetworkApiImpl()))
             carDetailPresenter.interface = viewController
             viewController.carDetailPresenter = carDetailPresenter
         }

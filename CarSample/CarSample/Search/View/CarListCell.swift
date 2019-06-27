@@ -14,7 +14,7 @@ class CarListCell: UITableViewCell {
     
     private func colorizeLabel(searchValue: String, labelValue: String) -> NSAttributedString {
         let attributedString = NSMutableAttributedString(string: labelValue)
-        let range = (labelValue as NSString).range(of: searchValue)
+        let range = (labelValue.lowercased() as NSString).range(of: searchValue.lowercased())
         let highlightsAttributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white,
             .backgroundColor: UIColor.red]

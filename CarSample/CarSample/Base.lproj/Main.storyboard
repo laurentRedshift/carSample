@@ -141,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rkf-Rw-nOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1499" y="-975"/>
+            <point key="canvasLocation" x="1498.5507246376812" y="-975"/>
         </scene>
         <!--Car Detail View Controller-->
         <scene sceneID="5gw-UV-PK1">
@@ -343,10 +343,10 @@
             </objects>
             <point key="canvasLocation" x="1365" y="-53"/>
         </scene>
-        <!--Edit View Controller-->
+        <!--Edit Account View Controller-->
         <scene sceneID="0rt-z7-4MK">
             <objects>
-                <viewController id="fcM-lh-AT6" customClass="EditViewController" customModule="CarSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fcM-lh-AT6" customClass="EditAccountViewController" customModule="CarSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jtm-ex-t6h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,7 +376,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="nickname"/>
                                 <connections>
                                     <outlet property="delegate" destination="fcM-lh-AT6" id="R7m-SE-fr6"/>
                                 </connections>
@@ -391,7 +391,7 @@
                                 <rect key="frame" x="234" y="164.5" width="160" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="family-name"/>
                                 <connections>
                                     <outlet property="delegate" destination="fcM-lh-AT6" id="yKt-Kp-LA4"/>
                                 </connections>
@@ -406,7 +406,7 @@
                                 <rect key="frame" x="234" y="266.5" width="160" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="address-level2"/>
                                 <connections>
                                     <outlet property="delegate" destination="fcM-lh-AT6" id="JSs-eg-iBt"/>
                                 </connections>

@@ -36,14 +36,14 @@ class CoreDataManager {
         return result
     }
     
-//    func deleteRecordsForEntity(_ entity: String, inManagedObjectContext managedObjectContext: NSManagedObjectContext) throws {
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-//        let records = try managedObjectContext.fetch(fetchRequest)
-//        if let records = records as? [NSManagedObject] {
-//            records.forEach({ managedObjectContext.delete($0) })
-//        }
-//        saveContext()
-//    }
+    func deleteRecordsForEntity(_ entity: String, inManagedObjectContext managedObjectContext: NSManagedObjectContext) throws {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        let records = try managedObjectContext.fetch(fetchRequest)
+        if let records = records as? [NSManagedObject] {
+            records.forEach({ managedObjectContext.delete($0) })
+        }
+        saveContext(inManagedObjectContext: managedObjectContext)
+    }
     
     func delete(objects: [NSManagedObject], inManagedObjectContext managedObjectContext: NSManagedObjectContext) {
         objects.forEach({ managedObjectContext.delete($0) })

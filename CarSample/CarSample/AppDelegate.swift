@@ -10,7 +10,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor.black
         UITabBar.appearance().tintColor = UIColor.black
         UITabBar.appearance().unselectedItemTintColor = UIColor.gray
-        
+        UISearchBar.appearance().tintColor = UIColor.black
+
         NotificationManager.shared.requestAuthorization()
         
         return true

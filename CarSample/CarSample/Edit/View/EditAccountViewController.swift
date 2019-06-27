@@ -15,7 +15,7 @@ extension DateFormatter {
     }
 }
 
-class EditViewController: UIViewController, UITextFieldDelegate {
+class EditAccountViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
@@ -37,15 +37,23 @@ class EditViewController: UIViewController, UITextFieldDelegate {
         navigationItem.rightBarButtonItems = [saveButtonItem]
         firstNameTextField.becomeFirstResponder()
         configureDatePicker()
+        updateSaveButtonStatus()
     }
     
     private func updateSaveButtonStatus() {
-        var isEnabled = true
-        for textField in [firstNameTextField, ageTextField, nameTextField, adressTextField] where textField?.text == nil || textField?.text?.isEmpty ?? true {
-            isEnabled = false
-            break
+        navigationItem.rightBarButtonItems?.first?.isEnabled = allFieldWithSomething()
+    }
+    
+    private func allFieldWithSomething(exceptTextField: UITextField? = nil) -> Bool {
+        var textFields = [firstNameTextField, ageTextField, nameTextField, adressTextField]
+        if let exceptTextField = exceptTextField {
+            textFields = textFields.filter({ $0 != exceptTextField })
         }
-        navigationItem.rightBarButtonItems?.first?.isEnabled = isEnabled
+        
+        for textField in textFields where textField?.text == nil || textField?.text?.isEmpty ?? true {
+            return false
+        }
+        return true
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
@@ -59,13 +67,16 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        for currentTextField in [firstNameTextField, ageTextField, nameTextField, adressTextField] {
-            if currentTextField == textField, let text = textField.text, text.replacingCharacters(in: Range(range, in: text)!, with: string).isEmpty {
-                navigationItem.rightBarButtonItems?.first?.isEnabled = false
-                return true
-            }
+        guard let text = textField.text, !text.isEmpty else {
+            navigationItem.rightBarButtonItems?.first?.isEnabled = allFieldWithSomething(exceptTextField: textField) && !string.isEmpty
+            return true
         }
-        navigationItem.rightBarButtonItems?.first?.isEnabled = true
+        
+        var currentFieldWithSomething = true
+        if let range = Range(range, in: text), text.replacingCharacters(in: range, with: string).isEmpty {
+            currentFieldWithSomething = false
+        }
+        navigationItem.rightBarButtonItems?.first?.isEnabled = allFieldWithSomething(exceptTextField: textField) && currentFieldWithSomething
         return true
     }
     
@@ -99,15 +110,17 @@ class EditViewController: UIViewController, UITextFieldDelegate {
         formatter.dateFormat = "dd/MM/yyyy"
         ageTextField.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
+        updateSaveButtonStatus()
     }
     
     @objc
     func cancelDatePicker() {
         self.view.endEditing(true)
+        updateSaveButtonStatus()
     }
 }
 
-extension EditViewController: EditAccountInterface {
+extension EditAccountViewController: EditAccountInterface {
     
     var editAccountViewModel: EditAccountViewModel? {
         guard let firstName = firstNameTextField.text, let name = nameTextField.text, let address = adressTextField.text else { return nil }

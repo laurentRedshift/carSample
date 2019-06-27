@@ -14,6 +14,7 @@ class SearchPresenterImpl: SearchPresenter {
     
     private let repository: CarRepository
     weak var interface: SearchInterface?
+    private var displayedCars = false
     
     init(repository: CarRepository) {
         self.repository = repository
@@ -21,23 +22,31 @@ class SearchPresenterImpl: SearchPresenter {
     
     func viewDidLoad() {
         repository.getCars(completion: { [weak self] result in
-                self?.receivedCars(result: result)
+                self?.receivedCars(result: result, displayNoCars: true)
             }, refreshed: { [weak self] result in
-                self?.receivedCars(result: result)
-                self?.interface?.refreshedCars()
+                guard let self = self else { return }
+                if self.receivedCars(result: result, displayNoCars: self.displayedCars == false) {
+                    self.interface?.refreshedCars()
+                }
             })
     }
     
-    private func receivedCars(result: Result<Cars, Error>) {
+    @discardableResult
+    private func receivedCars(result: Result<Cars, Error>, displayNoCars: Bool) -> Bool {
         do {
             let carsViewModels = try result.get().map({
                 CarListViewModel(carImage: $0.picture, make: $0.make, model: $0.model)
             })
             print("received \(carsViewModels.count) cars")
             interface?.display(carsViewModels: carsViewModels)
+            displayedCars = true
+            return true
         } catch {
-            interface?.displayNoCars()
+            if displayNoCars {
+                interface?.displayNoCars()
+            }
             print("Error when get cars \(error.localizedDescription)")
+            return false
         }
     }
 }

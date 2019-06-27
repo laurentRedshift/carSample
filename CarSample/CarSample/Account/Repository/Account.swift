@@ -1,7 +1,8 @@
 import Foundation
 import UIKit
 
-class Account: Codable {
+class Account: Codable, Equatable {
+    
     let name: String
     let firstName: String
     let birthDate: Date
@@ -12,5 +13,9 @@ class Account: Codable {
         self.firstName = firstName
         self.birthDate = birthDate
         self.address = address
+    }
+    
+    static func == (lhs: Account, rhs: Account) -> Bool {
+        return lhs.name == rhs.name && lhs.firstName == rhs.firstName && lhs.birthDate == rhs.birthDate && lhs.address == rhs.address
     }
 }
